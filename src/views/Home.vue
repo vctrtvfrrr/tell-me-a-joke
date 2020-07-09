@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <HelloWorld />
-  </div>
+  <WindowFace mood="neutral" />
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld";
+import WindowFace from "@/components/WindowFace";
 
 export default {
   name: "Home",
 
   components: {
-    HelloWorld
+    WindowFace
   }
 };
 </script>
