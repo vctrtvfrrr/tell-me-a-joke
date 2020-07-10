@@ -20,6 +20,20 @@ export default new Vuex.Store({
         name: "face",
         params: { mood: "sad" }
       });
+    },
+    neutralFace({ commit }) {
+      commit("SET_MOOD", "neutral");
+      Router.push({
+        name: "face",
+        params: { mood: "neutral" }
+      });
+    },
+    happyFace({ commit }) {
+      commit("SET_MOOD", "happy");
+      Router.push({
+        name: "face",
+        params: { mood: "happy" }
+      });
     }
   }
 });

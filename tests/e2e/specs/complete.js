@@ -1,3 +1,5 @@
+import time2read from "../../../src/utils/time2read";
+
 describe("Complete interaction", () => {
   let joke = "";
 
@@ -24,5 +26,13 @@ describe("Complete interaction", () => {
       cy.get(".modal-container").should("not.have.css", "display", "none");
       cy.get(".blockquote").contains(joke);
     });
+  });
+
+  it("should progressively improve your mood as I read the joke to her", () => {
+    const milisecs = time2read(joke);
+    cy.wait(milisecs);
+    cy.url().should("include", "/neutral");
+    cy.wait(milisecs);
+    cy.url().should("include", "/happy");
   });
 });
