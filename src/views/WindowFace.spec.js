@@ -10,8 +10,9 @@ localVue.use(Vuex);
 describe("WindowFace.vue", () => {
   const store = new Vuex.Store({ state: { faceMood: "neutral" } });
 
-  it("must contain a Face component", () => {
+  it("must contain a Face and Modal components", () => {
     const wrapper = shallowMount(WindowFace, { store, localVue });
     expect(wrapper.findComponent({ name: "Face" }).exists()).toBe(true);
+    expect(wrapper.findComponent({ name: "Modal" }).exists()).toBe(true);
   });
 });

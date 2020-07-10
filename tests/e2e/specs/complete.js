@@ -11,4 +11,8 @@ describe("Complete interaction", () => {
     cy.get(".overall").click({ force: true });
     cy.url().should("include", "/sad");
   });
+
+  it("should change the route and open a modal", () => {
+    cy.get(".modal-container").should("have.css", "display", "none");
+  });
 });
