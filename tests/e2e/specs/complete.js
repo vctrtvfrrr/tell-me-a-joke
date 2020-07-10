@@ -35,4 +35,10 @@ describe("Complete interaction", () => {
     cy.wait(milisecs);
     cy.url().should("include", "/happy");
   });
+
+  it("must return to his initial indecision about his mood", () => {
+    cy.get(".close").click();
+    cy.get(".modal-container").should("have.css", "display", "none");
+    cy.url().should("include", "/neutral");
+  });
 });
