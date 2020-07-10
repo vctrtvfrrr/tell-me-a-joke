@@ -1,5 +1,5 @@
 <template>
-  <div ref="face" :class="['face', faceMood]">
+  <div ref="face" class="face happy">
     <div class="eyebrow left" />
     <div class="eyebrow right" />
     <div class="eye left" />
@@ -10,14 +10,7 @@
 
 <script>
 export default {
-  name: "WindowFace",
-
-  props: {
-    mood: {
-      type: String,
-      default: "neutral"
-    }
-  },
+  name: "Face",
 
   mounted() {
     this.setFaceSize();
@@ -30,15 +23,6 @@ export default {
       faceElement.style.width = `${faceSize}px`;
       faceElement.style.height = `${faceSize}px`;
     }
-  },
-
-  computed: {
-    faceMood() {
-      // Validation for the 'mood' property
-      return ["happy", "neutral", "sad"].includes(this.mood)
-        ? this.mood
-        : "neutral";
-    }
   }
 };
 </script>
@@ -48,6 +32,7 @@ export default {
   position: relative;
   width: 120px;
   height: 120px;
+  overflow: hidden;
   border-radius: 50%;
 
   &.happy .mouth {

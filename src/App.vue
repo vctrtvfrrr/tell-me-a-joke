@@ -1,16 +1,26 @@
 <template>
-  <router-view />
+  <router-view class="overall" />
 </template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>
 
 <style>
 body {
   margin: 0;
   padding: 0;
+  background: #282c34;
+  color: #fff;
+}
+
+.overall {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #282c34;
-  color: #fff;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
