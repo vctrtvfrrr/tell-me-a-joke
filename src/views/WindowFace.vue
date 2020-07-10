@@ -1,17 +1,26 @@
 <template>
   <div @click="changeMood">
     <Face :mood="faceMood" />
+    <Modal :show.sync="showModal" />
   </div>
 </template>
 
 <script>
 import Face from "@/components/Face";
+import Modal from "@/components/Modal";
 
 export default {
   name: "WindowFace",
 
   components: {
-    Face
+    Face,
+    Modal
+  },
+
+  data() {
+    return {
+      showModal: false
+    };
   },
 
   methods: {
@@ -23,6 +32,8 @@ export default {
 
       if (this.faceMood === "neutral") {
         this.$store.dispatch("sadFace");
+      } else if (this.faceMood === "sad") {
+        this.showModal = true;
       }
     }
   },
