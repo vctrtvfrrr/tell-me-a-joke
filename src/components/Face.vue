@@ -1,5 +1,5 @@
 <template>
-  <div ref="face" class="face happy">
+  <div ref="face" :class="['face', faceMood]">
     <div class="eyebrow left" />
     <div class="eyebrow right" />
     <div class="eye left" />
@@ -12,6 +12,13 @@
 export default {
   name: "Face",
 
+  props: {
+    mood: {
+      type: String,
+      default: "neutral"
+    }
+  },
+
   mounted() {
     this.setFaceSize();
   },
@@ -22,6 +29,15 @@ export default {
       const faceSize = window.screen.height * 0.4;
       faceElement.style.width = `${faceSize}px`;
       faceElement.style.height = `${faceSize}px`;
+    }
+  },
+
+  computed: {
+    faceMood() {
+      // Validation for the 'mood' property
+      return ["happy", "neutral", "sad"].includes(this.mood)
+        ? this.mood
+        : "neutral";
     }
   }
 };
