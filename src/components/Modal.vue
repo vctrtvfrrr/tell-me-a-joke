@@ -1,18 +1,22 @@
 <template>
   <div v-show="show" class="modal-container">
     <div class="modal">
-      <LoadingSpinner />
+      <LoadingSpinner v-if="isLoading" />
+      <Quote v-else :text="joke" />
     </div>
   </div>
 </template>
 
 <script>
+import Quote from "@/components/Quote";
+import JokesAPI from "@/services/JokesAPI";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default {
   name: "Modal",
 
   components: {
+    Quote,
     LoadingSpinner
   },
 
@@ -20,6 +24,29 @@ export default {
     show: {
       type: Boolean,
       default: false
+    }
+  },
+
+  data() {
+    return {
+      isLoading: true,
+      joke: ""
+    };
+  },
+
+  watch: {
+    show(val) {
+      if (val) {
+        this.getJoke();
+      }
+    }
+  },
+
+  methods: {
+    async getJoke() {
+      this.isLoading = true;
+      this.joke = await JokesAPI.getJoke();
+      this.isLoading = false;
     }
   }
 };
