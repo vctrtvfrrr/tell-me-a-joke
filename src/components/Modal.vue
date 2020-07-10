@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import time2read from "@/utils/time2read";
 import Quote from "@/components/Quote";
 import JokesAPI from "@/services/JokesAPI";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -47,6 +48,20 @@ export default {
       this.isLoading = true;
       this.joke = await JokesAPI.getJoke();
       this.isLoading = false;
+      this.readJoke();
+    },
+
+    readJoke() {
+      // Calculate time to read the joke
+      const milisecs = time2read(this.joke);
+
+      // Reading the joke
+      setTimeout(() => {
+        this.$store.dispatch("neutralFace");
+        setTimeout(() => {
+          this.$store.dispatch("happyFace");
+        }, milisecs);
+      }, milisecs);
     }
   }
 };
