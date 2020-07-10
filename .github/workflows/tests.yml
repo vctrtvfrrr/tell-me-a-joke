@@ -18,8 +18,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Execute unit tests via Jest
-        # run: npm run test:unit
-        run: echo 'Not yet implemented'
+        run: npm run test:unit
       - name: Execute E2E tests via Cypress
-        #run: npm run test:e2e -- --headless
-        run: echo 'Not yet implemented'
+        run: npm run test:e2e -- --headless
