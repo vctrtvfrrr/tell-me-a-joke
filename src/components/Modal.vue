@@ -1,6 +1,13 @@
 <template>
   <div v-show="show" class="modal-container">
     <div class="modal">
+      <button
+        class="close"
+        title="Close"
+        @click.prevent="closeModal"
+        v-show="$store.state.faceMood === 'happy'"
+        v-text="'X'"
+      />
       <LoadingSpinner v-if="isLoading" />
       <Quote v-else :text="joke" />
     </div>
@@ -62,6 +69,11 @@ export default {
           this.$store.dispatch("happyFace");
         }, milisecs);
       }, milisecs);
+    },
+
+    closeModal() {
+      this.$emit("update:show", false);
+      this.$store.dispatch("neutralFace");
     }
   }
 };
@@ -87,5 +99,29 @@ export default {
   box-sizing: border-box;
   padding: 20px 50px;
   margin: 40px;
+}
+
+.close {
+  border: none;
+  cursor: pointer;
+  background-color: #f1efe6;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 1px 6px;
+  outline: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+  border-radius: 50%;
+
+  &:focus,
+  &:hover {
+    background-color: #d1cfc6;
+  }
 }
 </style>
