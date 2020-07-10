@@ -1,17 +1,17 @@
 <template>
   <div>
-    <HelloWorld />
+    <Face />
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld";
+import Face from "@/components/Face";
 
 export default {
-  name: "Home",
+  name: "WindowFace",
 
   components: {
-    HelloWorld
+    Face
   }
 };
 </script>

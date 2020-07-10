@@ -6,8 +6,14 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue")
+    name: "home",
+    redirect: { name: "face", params: { mood: "neutral" } }
+  },
+  {
+    path: "/:mood",
+    name: "face",
+    component: () =>
+      import(/* webpackChunkName: "window-face" */ "../views/WindowFace.vue")
   }
 ];
 
