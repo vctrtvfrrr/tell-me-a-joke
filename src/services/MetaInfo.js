@@ -19,9 +19,39 @@ export const title = currentPage => {
   return title;
 };
 
+export const description = currentPage => {
+  let description = "";
+
+  switch (currentPage) {
+    case "sad":
+      description =
+        "I'm a sad page, I don't know what is the sense of life. How I would like to hear a good joke now.";
+      break;
+
+    case "happy":
+      description =
+        "I'm happy. I'm a lucky page. I finally found the meaning of all existence.";
+      break;
+
+    case "neutral":
+    default:
+      description =
+        "Hello, I'm a webpage that likes to hear geek jokes. My mood isn't the best, so tell me a good joke to make my day better.";
+      break;
+  }
+
+  return description;
+};
+
 export const resolveMetaInfo = currentPage => {
   return {
-    title: title(currentPage)
+    title: title(currentPage),
+    meta: [
+      {
+        name: "description",
+        content: description(currentPage)
+      }
+    ]
   };
 };
 
