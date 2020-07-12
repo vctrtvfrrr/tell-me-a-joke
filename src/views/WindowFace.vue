@@ -8,6 +8,7 @@
 <script>
 import Face from "@/components/Face";
 import Modal from "@/components/Modal";
+import { resolveMetaInfo } from "@/services/MetaInfo";
 
 export default {
   name: "WindowFace",
@@ -42,6 +43,10 @@ export default {
     faceMood() {
       return this.$store.state.faceMood;
     }
+  },
+
+  metaInfo() {
+    return resolveMetaInfo(this.faceMood);
   }
 };
 </script>
