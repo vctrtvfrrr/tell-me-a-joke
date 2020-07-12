@@ -5,7 +5,7 @@
         class="close"
         title="Close"
         @click.prevent="closeModal"
-        v-show="$store.state.faceMood === 'happy'"
+        v-show="$store.state.faceMood === 'happy' || error"
         v-text="'X'"
       />
       <LoadingSpinner v-if="isLoading" />
@@ -38,7 +38,8 @@ export default {
   data() {
     return {
       isLoading: true,
-      joke: ""
+      joke: "",
+      error: false
     };
   },
 
@@ -53,9 +54,17 @@ export default {
   methods: {
     async getJoke() {
       this.isLoading = true;
-      this.joke = await JokesAPI.getJoke();
+
+      const response = await JokesAPI.getJoke();
+      this.joke = response.text;
+
       this.isLoading = false;
-      this.readJoke();
+
+      if (response.success) {
+        this.readJoke();
+      } else {
+        this.error = true;
+      }
     },
 
     readJoke() {
