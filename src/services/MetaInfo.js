@@ -1,4 +1,6 @@
-export const title = currentPage => {
+import logo from "@/assets/logo.png";
+
+const title = currentPage => {
   let title = "";
 
   switch (currentPage) {
@@ -19,7 +21,7 @@ export const title = currentPage => {
   return title;
 };
 
-export const description = currentPage => {
+const description = currentPage => {
   let description = "";
 
   switch (currentPage) {
@@ -44,13 +46,23 @@ export const description = currentPage => {
 };
 
 export const resolveMetaInfo = currentPage => {
+  const metaTitle = title(currentPage);
+  const metaDescription = description(currentPage);
+
   return {
-    title: title(currentPage),
+    title: metaTitle,
     meta: [
-      {
-        name: "description",
-        content: description(currentPage)
-      }
+      { name: "robots", content: "index,follow" },
+      { name: "description", content: metaDescription },
+      { property: "og:locale", content: "en" },
+      { property: "og:title", content: metaTitle },
+      { property: "og:description", content: metaDescription },
+      { property: "og:site_name", content: "Tell me a joke" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: logo },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: 256 },
+      { property: "og:image:height", content: 256 }
     ]
   };
 };
