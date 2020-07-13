@@ -5,14 +5,14 @@ describe("Complete interaction", () => {
 
   it("starts with a screen that is neither happy nor sad", () => {
     cy.visit("/");
-    cy.get(".overall")
+    cy.get(".main")
       .find(".face")
       .should("have.class", "neutral");
     cy.url().should("include", "/neutral");
   });
 
   it("should change the route and make screen 100% sad", () => {
-    cy.get(".overall").click({ force: true });
+    cy.get(".main").click({ force: true });
     cy.url().should("include", "/sad");
   });
 
@@ -20,7 +20,7 @@ describe("Complete interaction", () => {
     cy.get(".modal-container").should("have.css", "display", "none");
     cy.server();
     cy.route("https://geek-jokes.sameerkumar.website/*").as("geekJokes");
-    cy.get(".overall").click({ force: true });
+    cy.get(".main").click({ force: true });
     cy.wait("@geekJokes").then(({ response }) => {
       joke = response.body.joke;
       cy.get(".modal-container").should("not.have.css", "display", "none");
