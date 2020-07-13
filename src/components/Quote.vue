@@ -46,4 +46,11 @@ export default {
     bottom: -0.8rem;
   }
 }
+
+@media (max-width: 768px) {
+  .blockquote {
+    font-size: 1rem;
+    padding: 0;
+  }
+}
 </style>
