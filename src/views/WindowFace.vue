@@ -64,4 +64,10 @@ export default {
   width: 100vw;
   height: calc(100vh - 60px);
 }
+
+@media (max-width: 768px) {
+  .main {
+    display: block;
+  }
+}
 </style>

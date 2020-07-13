@@ -132,4 +132,15 @@ export default {
     background-color: #d1cfc6;
   }
 }
+
+@media (max-width: 768px) {
+  .modal-container {
+    position: relative;
+    height: auto;
+  }
+
+  .modal {
+    margin: 20px;
+  }
+}
 </style>

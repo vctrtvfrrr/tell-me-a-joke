@@ -116,4 +116,10 @@ export default {
   box-sizing: border-box;
   border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+  .face {
+    margin: 0 auto;
+  }
+}
 </style>
