@@ -1,4 +1,4 @@
-![Tests](https://github.com/VictorOtavio/tell-me-a-joke/workflows/Tests/badge.svg) ![Deploy](https://github.com/VictorOtavio/tell-me-a-joke/workflows/Deploy/badge.svg)
+![Tests](https://github.com/vctrtvfrrr/tell-me-a-joke/workflows/Tests/badge.svg) ![Deploy](https://github.com/vctrtvfrrr/tell-me-a-joke/workflows/Deploy/badge.svg)
 
 # Tell me a joke
 
@@ -6,7 +6,7 @@
 
 <p align="center"><img src="https://i.ibb.co/3s9DV7Y/happy.png" alt="Happy" /></p>
 
-To access running application: [victorotavio.github.io/tell-me-a-joke](https://victorotavio.github.io/tell-me-a-joke)
+To access running application: [vctrtvfrrr.github.io/tell-me-a-joke](https://vctrtvfrrr.github.io/tell-me-a-joke)
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```bash
 # Clone the project and navigate to the project root
-git clone https://github.com/VictorOtavio/tell-me-a-joke.git && cd tell-me-a-joke
+git clone https://github.com/vctrtvfrrr/tell-me-a-joke.git && cd tell-me-a-joke
 # Install npm dependencies
 npm install
 # Compiles and hot-reloads for development
