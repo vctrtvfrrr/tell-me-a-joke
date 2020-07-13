@@ -7,6 +7,7 @@ export default {
   name: "Quote",
 
   props: {
+    // Text that will be displayed
     text: {
       type: String,
       required: true

@@ -8,6 +8,7 @@ const routes = [
   {
     path: "/",
     name: "home",
+    // Default mood is 'neutral'
     redirect: { name: "face", params: { mood: "neutral" } }
   },
   {
@@ -15,7 +16,9 @@ const routes = [
     name: "face",
     component: () =>
       import(/* webpackChunkName: "window-face" */ "../views/WindowFace.vue"),
-    beforeEnter: (to, from, next) => {
+    // Sets the current mood of the page based on the URL,
+    // if the user accesses the page directly or refresh the page manually.
+    beforeEnter: (to, _, next) => {
       const mood = to.params.mood ? to.params.mood : "neutral";
       Store.commit("SET_MOOD", mood);
       next();
@@ -24,7 +27,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  // Must run on GitHub Pages
+  // Without history mode because must run on GitHub Pages
   // mode: "history",
   base: process.env.BASE_URL,
   routes

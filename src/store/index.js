@@ -4,36 +4,34 @@ import Router from "@/router";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-    faceMood: "neutral"
-  },
-  mutations: {
-    SET_MOOD(state, mood) {
-      state.faceMood = mood;
-    }
-  },
-  actions: {
-    sadFace({ commit }) {
-      commit("SET_MOOD", "sad");
-      Router.push({
-        name: "face",
-        params: { mood: "sad" }
-      });
-    },
-    neutralFace({ commit }) {
-      commit("SET_MOOD", "neutral");
-      Router.push({
-        name: "face",
-        params: { mood: "neutral" }
-      });
-    },
-    happyFace({ commit }) {
-      commit("SET_MOOD", "happy");
-      Router.push({
-        name: "face",
-        params: { mood: "happy" }
-      });
-    }
+const state = {
+  // Page mood
+  faceMood: "neutral",
+  // Values for the page mood
+  validMoods: ["sad", "neutral", "happy"]
+};
+
+const mutations = {
+  // Changes the page mood
+  SET_MOOD(state, mood) {
+    state.faceMood = mood;
   }
+};
+
+const actions = {};
+/**
+ * Each valid mood sets your value and triggers
+ * a redirect to a different page.
+ */
+state.validMoods.forEach(mood => {
+  actions[`${mood}Face`] = ({ commit }) => {
+    commit("SET_MOOD", mood);
+    Router.push({ name: "face", params: { mood } });
+  };
+});
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions
 });

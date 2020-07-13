@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="main" @click="changeMood">
+    <main class="main" @click="actionClick">
       <Face :mood="faceMood" />
       <Modal :show.sync="showModal" />
     </main>
@@ -30,7 +30,11 @@ export default {
   },
 
   methods: {
-    changeMood($event) {
+    /**
+     * Generic click that triggers page actions.
+     * @param {Object} $event
+     */
+    actionClick($event) {
       // Ignores the click on any element other than the .main
       if (!$event.target.classList.contains("main")) {
         return;

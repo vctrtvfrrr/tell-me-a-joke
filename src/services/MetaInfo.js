@@ -1,9 +1,14 @@
 import logo from "@/assets/logo.png";
 
-const title = currentPage => {
+/**
+ * Return a page title based on current page mood
+ * @param {String} mood Current page mood
+ * @return {String}
+ */
+const title = mood => {
   let title = "";
 
-  switch (currentPage) {
+  switch (mood) {
     case "sad":
       title = "- I'm sad ☹️  - please, tell me a joke";
       break;
@@ -21,10 +26,15 @@ const title = currentPage => {
   return title;
 };
 
-const description = currentPage => {
+/**
+ * Return a page description based on current page mood
+ * @param {String} mood Current page mood
+ * @return {String}
+ */
+const description = mood => {
   let description = "";
 
-  switch (currentPage) {
+  switch (mood) {
     case "sad":
       description =
         "I'm a sad page, I don't know what is the sense of life. How I would like to hear a good joke now.";
@@ -45,6 +55,11 @@ const description = currentPage => {
   return description;
 };
 
+/**
+ * Returns a series of parameters that dynamically mount up the page's head tag.
+ * @param {String} currentPage Current page mood
+ * @return {Object}
+ */
 export const resolveMetaInfo = currentPage => {
   const metaTitle = title(currentPage);
   const metaDescription = description(currentPage);

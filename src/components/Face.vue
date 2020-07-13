@@ -24,6 +24,10 @@ export default {
   },
 
   methods: {
+    /**
+     * Resize the page face according to the size of the
+     * browser window, to improve usability.
+     */
     setFaceSize() {
       const faceElement = this.$refs.face;
       const faceSize = window.screen.height * 0.4;

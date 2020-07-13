@@ -29,6 +29,7 @@ export default {
   },
 
   props: {
+    // Indicates if the modal window is open
     show: {
       type: Boolean,
       default: false
@@ -44,6 +45,7 @@ export default {
   },
 
   watch: {
+    // Search for a joke whenever the modal window is opened.
     show(val) {
       if (val) {
         this.getJoke();
@@ -52,6 +54,10 @@ export default {
   },
 
   methods: {
+    /**
+     * Searches for a joke through the API and, if a joke
+     * is found, simulates its reading.
+     */
     async getJoke() {
       this.isLoading = true;
 
@@ -67,6 +73,9 @@ export default {
       }
     },
 
+    /**
+     * Simulates text reading time.
+     */
     readJoke() {
       // Calculate time to read the joke
       const milisecs = time2read(this.joke);
@@ -80,6 +89,9 @@ export default {
       }, milisecs);
     },
 
+    /**
+     * Closes the modal window.
+     */
     closeModal() {
       this.$emit("update:show", false);
       this.$store.dispatch("neutralFace");
