@@ -1,7 +1,9 @@
 <template>
-  <div @click="changeMood">
-    <Face :mood="faceMood" />
-    <Modal :show.sync="showModal" />
+  <div>
+    <main class="main" @click="changeMood">
+      <Face :mood="faceMood" />
+      <Modal :show.sync="showModal" />
+    </main>
     <Copyright />
   </div>
 </template>
@@ -29,8 +31,8 @@ export default {
 
   methods: {
     changeMood($event) {
-      // Ignores the click on any element other than the .overall
-      if (!$event.target.classList.contains("overall")) {
+      // Ignores the click on any element other than the .main
+      if (!$event.target.classList.contains("main")) {
         return;
       }
 
@@ -53,3 +55,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
+</style>
