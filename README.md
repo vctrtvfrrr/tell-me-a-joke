@@ -1,8 +1,10 @@
+![Tests](https://github.com/VictorOtavio/tell-me-a-joke/workflows/Tests/badge.svg) ![Deploy](https://github.com/VictorOtavio/tell-me-a-joke/workflows/Deploy/badge.svg)
+
 # Tell me a joke
 
 > Tell your browser a joke and make it happy!
 
-<div style="text-align:center"><img src="https://i.ibb.co/3s9DV7Y/happy.png" alt="Happy" /></div>
+<p align="center"><img src="https://i.ibb.co/3s9DV7Y/happy.png" alt="Happy" /></p>
 
 To access running application: [victorotavio.github.io/tell-me-a-joke](https://victorotavio.github.io/tell-me-a-joke)
 
