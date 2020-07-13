@@ -36,9 +36,12 @@ export default {
         return;
       }
 
-      if (this.faceMood === "neutral") {
+      // If the mood is different from sad, better be sad soon...
+      if (this.faceMood !== "sad") {
         this.$store.dispatch("sadFace");
-      } else if (this.faceMood === "sad") {
+      }
+      // If the mood is sad, tell a joke...
+      else if (this.faceMood === "sad") {
         this.showModal = true;
       }
     }
