@@ -2,7 +2,7 @@
 
 > Tell your browser a joke and make it happy!
 
-<div style="text-align:center"> ![Happy](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAV1BMVEUoKzPawG2/qWPUu2m0oF+ShVQ2ODfPuGnFrmV5b0wwMjVqZEhmYEapmFuhkllQTj88PTm6pmGunF2ZiVeIfFFdWUNCQjyNgVODd09LSD11bEvKs2dVUUE0q4iSAAABSElEQVRo3u3VyYrDMBAE0CpJlmR5ifclyf9/50wIhhkYxUZOYA79zkUXdB8aQgghhPhXLplRXpn5khrZVxpq1VWd0jRlUmRfRpVbPNhcMUuJ7Cuyn+OKIxEhxKdMtXdqDnghzMr5ekKy0fGhtYiyig9uRCrPpxpRFZ88EuXcBEQEbnKk6bkpEVFy058uKRBRnC5ZuGkQMXGzII11fDKIMnxy9uTlb69+/G27e7JCaepuxQtr9x1RBc5oVosddm0ghBBCCPHbiMPsPbWDJuCYRukLkoSK7YQj7p41UtV0BfblmhnSLZp92FtVRXfFGaOnfz1hcWxXnBMyzTa+s6uiG3DeWpFq+XNRmaeuJ7zFpdLUZhjxQyizlnSRiiTN0JLUquvnYRjm3nhN0uQW7zUNlbpxc2vra8BHhGYs8+Va3i2EEEIIIYT4oC8MqwwVCBo9hwAAAABJRU5ErkJggg==) </div>
+<div style="text-align:center"><img src="https://i.ibb.co/3s9DV7Y/happy.png" alt="Happy" /></div>
 
 To access running application: [victorotavio.github.io/tell-me-a-joke](https://victorotavio.github.io/tell-me-a-joke)
 
