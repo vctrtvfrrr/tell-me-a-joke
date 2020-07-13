@@ -91,10 +91,9 @@ export default {
 <style lang="scss" scoped>
 .modal-container {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  position: absolute;
 }
 
 .modal {

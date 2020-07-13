@@ -11,12 +11,24 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
+
 body {
   margin: 0;
   padding: 0;
+  color: #b8bcc4;
   background: #282c34;
-  color: #fff;
+  font-family: "Special Elite", cursive;
+}
+
+a {
+  color: #b8bcc4;
+
+  &:focus,
+  &:hover {
+    color: #e8ecf4;
+  }
 }
 
 .overall {
