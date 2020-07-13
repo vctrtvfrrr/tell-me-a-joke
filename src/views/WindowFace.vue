@@ -2,12 +2,14 @@
   <div @click="changeMood">
     <Face :mood="faceMood" />
     <Modal :show.sync="showModal" />
+    <Copyright />
   </div>
 </template>
 
 <script>
 import Face from "@/components/Face";
 import Modal from "@/components/Modal";
+import Copyright from "@/components/Copyright";
 import { resolveMetaInfo } from "@/services/MetaInfo";
 
 export default {
@@ -15,7 +17,8 @@ export default {
 
   components: {
     Face,
-    Modal
+    Modal,
+    Copyright
   },
 
   data() {
