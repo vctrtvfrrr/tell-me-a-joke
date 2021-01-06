@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["home"],{bb51:function(e,l,n){"use strict";n.r(l);var o=function(){var e=this,l=e.$createElement,n=e._self._c||l;return n("div",[n("HelloWorld")],1)},t=[],r=function(){var e=this,l=e.$createElement,n=e._self._c||l;return n("div")},u=[],c={name:"HelloWorld"},a=c,s=n("2877"),i=Object(s["a"])(a,r,u,!1,null,null,null),d=i.exports,p={name:"Home",components:{HelloWorld:d}},m=p,b=Object(s["a"])(m,o,t,!1,null,null,null);l["default"]=b.exports}}]);
-//# sourceMappingURL=home.df8c42ee.js.map
